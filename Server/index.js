@@ -15,11 +15,14 @@ app.use(
 );
 
 
-const mongodb = mongoose.connect("mongodb://localhost:27017/users");
-   if(mongodb){
-    console.log("mongo db connected succesfully");
-    
-   }
+mongoose.connect("mongodb://localhost:27017/users")
+  .then(() => {
+    console.log("MongoDB connected successfully");
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
+
 
    app.get("/employee", verifyUser,getEmployee);
   
