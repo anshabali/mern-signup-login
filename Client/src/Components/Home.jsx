@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import EmployeeForm from "./Pages/EmployeeForm";
-import EmployeeTable from "./Pages/EmployeeTable";
+import EmployeeForm from "../Pages/EmployeeForm";
+import EmployeeTable from "../Pages/EmployeeTable";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Home() {
