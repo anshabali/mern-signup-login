@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const employeeSchema = new mongoose.Schema({
   name: {
@@ -13,11 +13,11 @@ const employeeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  userId: { // Link employee to the user
+  userId: {
     type: String,
     required: true,
   },
 });
 
 const EmployeeModel = mongoose.model("Employee", employeeSchema);
-module.exports = EmployeeModel;
+export default EmployeeModel;

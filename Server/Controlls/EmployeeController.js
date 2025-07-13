@@ -1,11 +1,9 @@
-const EmployeeModel = require("../models/Employee");
+import EmployeeModel from "../models/Employee.js"; 
 
-  const getEmployee =  async (req, res) => {
-    try {
-     
-      
-      const employees = await EmployeeModel.find({ userId: req.userId }); // Use userId to find employees
-      return res.json(employees);
+const getEmployee = async (req, res) => {
+  try {
+    const employees = await EmployeeModel.find({ userId: req.userId }); // Use userId to find employees
+    return res.json(employees);
     } catch (error) {
       console.error("Error fetching employees:", error); // Log the error for debugging
       return res.status(500).json({ message: "Error fetching employees", error: error.message });
@@ -80,4 +78,5 @@ const deleteEmployee = async (req, res) => {
 
   
 
-  module.exports = {getEmployee,createEmployee,updateEmployee,deleteEmployee};
+
+export { getEmployee, createEmployee, updateEmployee, deleteEmployee };

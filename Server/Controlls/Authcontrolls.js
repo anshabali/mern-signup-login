@@ -1,7 +1,9 @@
-const userModel = require("../models/User");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const dotenv=require("dotenv").config();
+import userModel from "../models/User.js";
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 
 // Register Validation
 const registerValidate = async (req, res) => {
@@ -47,4 +49,4 @@ const loginValidate = async (req, res) => {
 
 
 
-module.exports = { registerValidate, loginValidate};
+export { registerValidate, loginValidate };
