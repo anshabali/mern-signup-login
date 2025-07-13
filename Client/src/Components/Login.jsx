@@ -22,7 +22,7 @@ const Login = () => {
   const validateLogin = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/login", { email, password })
+      .post("http://localhost:3001/api/auth/login", { email, password })
       .then((result) => {
         if (result.status === 200) {
           localStorage.setItem("token", result.data.token);

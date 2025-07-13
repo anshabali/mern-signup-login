@@ -19,7 +19,7 @@ function Home() {
     } else {
       const fetchEmployees = async () => {
         try {
-          const response = await axios.get("http://localhost:3001/employee", {
+          const response = await axios.get("http://localhost:3001/api/employee/employee", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -36,7 +36,7 @@ function Home() {
   const addEmployee = async (employee) => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/employee",
+        "http://localhost:3001/api/employee/employee",
         employee,
         {
           headers: {
@@ -54,7 +54,7 @@ function Home() {
   const editEmployee = async (employee) => {
     try {
       const response = await axios.put(
-        `http://localhost:3001/employee/${employee._id}`,
+        `http://localhost:3001/api/employee/employee/${employee._id}`,
         employee,
         {
           headers: {
@@ -74,7 +74,7 @@ function Home() {
 
   const deleteEmployee = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/employee/${id}`, {
+      await axios.delete(`http://localhost:3001/api/employee/employee/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

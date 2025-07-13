@@ -68,7 +68,7 @@ function Signup() {
   function handleSubmit(e) {
     e.preventDefault();
     if (validateForm()) {
-      axios.post('http://localhost:3001/register', formData)
+      axios.post('http://localhost:3001/api/auth/register', formData)
         .then(result => {
           console.log(result);
           navigate('/login');
